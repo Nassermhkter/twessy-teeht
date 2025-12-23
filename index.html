@@ -401,7 +401,7 @@
         }
 
         .product-image {
-            height: 180px; /* أصغر حجم */
+            height: 200px; /* تم تعديل الحجم ليكون متناسقاً */
             overflow: hidden;
             position: relative;
         }
@@ -564,30 +564,9 @@
             transform: scale(1.02);
         }
 
+        /* تم إزالة قسم الصور المصغرة */
         .image-thumbnails {
-            display: flex;
-            gap: 12px;
-        }
-
-        .thumbnail {
-            width: 80px;
-            height: 80px;
-            overflow: hidden;
-            border-radius: 8px;
-            border: 3px solid transparent;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .thumbnail.active, .thumbnail:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: none; /* تم إخفاء الصور المصغرة */
         }
 
         .product-info h1 {
@@ -630,11 +609,16 @@
             gap: 8px;
         }
 
-        .product-description, .product-specs {
+        .product-description {
             margin-bottom: 25px;
         }
 
-        .product-description h3, .product-specs h3 {
+        /* تم إخفاء المواصفات التفصيلية */
+        .product-specs {
+            display: none; /* تم إخفاء المواصفات التفصيلية */
+        }
+
+        .product-description h3 {
             font-size: 20px;
             margin-bottom: 12px;
             color: var(--secondary-color);
@@ -659,26 +643,6 @@
             font-weight: bold;
             position: absolute;
             right: -20px;
-        }
-
-        .product-specs table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .product-specs table tr {
-            border-bottom: 1px solid #edf2f7;
-        }
-
-        .product-specs table td {
-            padding: 10px 0;
-            font-size: 14px;
-        }
-
-        .product-specs table td:first-child {
-            font-weight: 600;
-            color: var(--secondary-color);
-            width: 35%;
         }
 
         .product-actions {
@@ -1652,7 +1616,7 @@
             }
             
             .product-image {
-                height: 150px;
+                height: 180px; /* تعديل للشاشات الصغيرة */
             }
             
             .product-info h3 {
@@ -1789,17 +1753,7 @@
                     <div class="main-image">
                         <img id="mainProductImage" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="صورة المنتج الرئيسية">
                     </div>
-                    <div class="image-thumbnails">
-                        <div class="thumbnail active">
-                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="صورة مصغرة 1">
-                        </div>
-                        <div class="thumbnail">
-                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="صورة مصغرة 2">
-                        </div>
-                        <div class="thumbnail">
-                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="صورة مصغرة 3">
-                        </div>
-                    </div>
+                    <!-- تم إزالة الصور المصغرة -->
                 </div>
                 
                 <div class="product-info">
@@ -1822,16 +1776,6 @@
                             <li>مناسبة لجميع إجراءات جراحة الفم</li>
                             <li>ضمان لمدة سنة ضد عيوب التصنيع</li>
                         </ul>
-                    </div>
-                    
-                    <div class="product-specs" id="detailSpecs">
-                        <h3>المواصفات:</h3>
-                        <table>
-                            <tr><td>المادة:</td><td>فولاذ جراحي مقاوم للصدأ</td></tr>
-                            <tr><td>حجم العبوة:</td><td>12 قطعة</td></tr>
-                            <tr><td>بلد المنشأ:</td><td>ألمانيا</td></tr>
-                            <tr><td>التعقيم:</td><td>قابل للتعقيم بالأوتوكلاف</td></tr>
-                        </table>
                     </div>
                     
                     <div class="product-actions">
@@ -2376,6 +2320,8 @@
             document.getElementById('detailCategory').textContent = getCategoryName(product.category);
             document.getElementById('productCode').textContent = product.code;
             document.getElementById('detailPrice').textContent = formatPrice(product.price);
+            document.getElementById('mainProductImage').src = product.image;
+            document.getElementById('mainProductImage').alt = product.name;
             document.getElementById('detailDescription').innerHTML = `
                 <h3>وصف المنتج:</h3>
                 <p>${product.description}</p>
