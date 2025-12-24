@@ -1,0 +1,32 @@
+<!-- في قسم order-modal-body بعد payment-methods -->
+<div class="confirmation-method" style="margin: 20px 0; padding: 20px; background: #f8fafc; border-radius: 12px; border: 2px solid #e2e8f0;">
+    <h4 style="font-size: 18px; margin-bottom: 15px; color: var(--secondary-color); text-align: center;">
+        <i class="fas fa-check-circle"></i> طريقة تأكيد الطلب
+    </h4>
+    
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+        <label class="confirmation-option" style="display: flex; align-items: center; padding: 15px; background: white; border-radius: 10px; cursor: pointer; transition: var(--transition); border: 2px solid #e2e8f0;">
+            <input type="radio" name="confirmation" value="whatsapp" checked style="margin-left: 10px;">
+            <div>
+                <h5 style="margin: 0 0 5px 0; color: var(--secondary-color);">
+                    <i class="fab fa-whatsapp" style="color: #25D366;"></i> تأكيد عبر واتساب
+                </h5>
+                <p style="margin: 0; color: var(--gray-color); font-size: 14px;">
+                    سنرسل لك رسالة تأكيد على واتساب برقم الطلب
+                </p>
+            </div>
+        </label>
+        
+        <label class="confirmation-option" style="display: flex; align-items: center; padding: 15px; background: white; border-radius: 10px; cursor: pointer; transition: var(--transition); border: 2px solid var(--primary-color);">
+            <input type="radio" name="confirmation" value="direct" style="margin-left: 10px;">
+            <div>
+                <h5 style="margin: 0 0 5px 0; color: var(--secondary-color);">
+                    <i class="fas fa-check" style="color: var(--success-color);"></i> تأكيد مباشر (بدون واتساب)
+                </h5>
+                <p style="margin: 0; color: var(--gray-color); font-size: 14px;">
+                    ستتلقى تأكيداً مباشراً داخل الموقع برقم تتبع للطلب
+                </p>
+            </div>
+        </label>
+    </div>
+</div>

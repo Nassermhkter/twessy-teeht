@@ -1,0 +1,25 @@
+<!-- أضف هذا الرابط في القائمة الرئيسية -->
+<li><a href="#track" id="trackOrderLink"><i class="fas fa-truck"></i> متابعة الطلب</a></li>
+
+<!-- وأضف هذا القسم قبل الفوتر -->
+<section id="track" class="track-page" style="display: none;">
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="fas fa-truck"></i> متابعة حالة الطلب</h1>
+            <p>أدخل رقم طلبك لمتابعة حالة شحنه</p>
+        </div>
+        
+        <div class="track-container" style="max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: var(--box-shadow);">
+            <div class="form-group">
+                <label for="orderIdInput">رقم الطلب *</label>
+                <input type="text" id="orderIdInput" placeholder="أدخل رقم الطلب (مثال: TT-12345678)" style="text-align: center; font-weight: bold;">
+            </div>
+            
+            <button id="trackOrderBtn" class="btn" style="width: 100%; margin-top: 20px;">
+                <i class="fas fa-search"></i> متابعة الطلب
+            </button>
+            
+            <div id="trackResult" style="margin-top: 30px; display: none;"></div>
+        </div>
+    </div>
+</section>
